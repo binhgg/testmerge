@@ -1,3 +1,3 @@
 <?php
 
-die('YES');
+die('YES is it');
