@@ -1,3 +1,3 @@
 <?php
 
-die("New commit");
+die("New commit for this file");
