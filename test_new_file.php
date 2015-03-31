@@ -1,3 +1,3 @@
 <?php
 
-die('new pushhhhhhhhhhhhhhhh!!!!!!!!!!!');
+die('commit and push');
