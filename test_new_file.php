@@ -1,3 +1,3 @@
 <?php
 
-die('change and commit');
+die('change file and push');
