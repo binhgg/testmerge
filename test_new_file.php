@@ -1,3 +1,3 @@
 <?php
 
-die('Test new file commit');
+die('change and commit');
