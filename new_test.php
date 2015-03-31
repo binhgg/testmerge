@@ -1,3 +1,3 @@
 <?php
 
-die('change and new');
+die('new update code');
