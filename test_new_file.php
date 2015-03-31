@@ -1,3 +1,3 @@
 <?php
 
-die('change file and push');
+die('push!!!!!!!!!');
