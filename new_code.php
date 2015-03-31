@@ -1,3 +1,3 @@
 <?php
 
-die('New upload');
+die('The file is changed!');
