@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ideapodApp">
+<head>
+
+  <meta name="fragment" content="!">
+  <title ng-bind="$root.pageTitle"></title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Build authentic relationships online and offline by communicating your ideas.">
+  <meta name="author" content="{{ $root.author }}">
+  <meta name="copyright" content="&copy; Ideapod {{ $root.today | date:'yyyy' }}">
+
+  <meta property="fb:app_id" content="1428494370696159">
+  <meta property="og:site_name" content="Ideapod">
+  <meta property="og:image" content="{{ $root.pageImage }}">
+  <meta property="og:type" content="{{ $root.facebookOpenGraph.type }}">
+  <meta property="og:url" content="{{ $root.facebookOpenGraph.url }}">
+  <meta property="og:title" content="{{ $root.pageTitle }}">
+  <meta property="og:description" content="{{ $root.pageDescription }}">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@ideas">
+  <meta name="twitter:creator" content="{{ $root.author }}">
+  <meta name="twitter:description" content="{{ $root.pageDescription }}">
+  <meta name="twitter:title" content="{{ $root.pageTitle }}">
+  <meta name="twitter:image:src" content="{{ $root.pageImage }}">
+  <meta name="twitter:domain" content="ideapod.com">
+
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <link href="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" media="all" rel="stylesheet">
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css({.tmp,app}) styles/main.css -->
+  <link href="styles/main.css" media="all" rel="stylesheet">
+  <!-- endbuild -->
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="bower_components/json3/lib/json3.min.js"></script>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.1/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+  <!-- Fav and touch icons -->
+  <link rel="apple-touch-icon" href="images/logo/touch-icon-iphone.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="images/logo/touch-icon-ipad.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="images/logo/touch-icon-iphone-retina.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="images/logo/touch-icon-ipad-retina.png" />
+
+  <script type="text/javascript">
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-38944433-2', 'ideapod.com');
+    ga('require', 'displayfeatures');
+
+  </script>
+
+</head>
+<body id="{{$root.chooseBodyId()}}">
+<!--[if lte IE 7]>
+<div style='clear: both; height: 112px; padding:0; position: relative;'>
+  <a href="http://www.theie7countdown.com/ie-users-info">
+    <img src="images/badge_iecountdown.png" border="0" height="112" width="348" alt="" />
+  </a>
+</div>
+<![endif]-->
+<div ui-view id="wrapper"></div>
+
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="bower_components/restangular/dist/restangular.js"></script>
+<script src="bower_components/get-style-property/get-style-property.js"></script>
+<script src="bower_components/get-size/get-size.js"></script>
+<script src="bower_components/eventie/eventie.js"></script>
+<script src="bower_components/doc-ready/doc-ready.js"></script>
+<script src="bower_components/eventEmitter/EventEmitter.js"></script>
+<script src="bower_components/jquery-bridget/jquery.bridget.js"></script>
+<script src="bower_components/matches-selector/matches-selector.js"></script>
+<script src="bower_components/outlayer/item.js"></script>
+<script src="bower_components/outlayer/outlayer.js"></script>
+<script src="bower_components/masonry/masonry.js"></script>
+<script src="bower_components/imagesloaded/imagesloaded.js"></script>
+<script src="bower_components/angular-masonry/angular-masonry.js"></script>
+<script src="bower_components/angular-translate/angular-translate.js"></script>
+<script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+<script src="bower_components/autofill-event/src/autofill-event.js"></script>
+<script src="bower_components/lodash/dist/lodash.compat.js"></script>
+<script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+<script src="bower_components/ngstorage/ngStorage.js"></script>
+<script src="bower_components/moment/moment.js"></script>
+<script src="bower_components/jquery-waypoints/waypoints.js"></script>
+<script src="bower_components/angulartics/dist/angulartics.min.js"></script>
+<script src="bower_components/angulartics/dist/angulartics-ga.min.js"></script>
+<script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+<script src="bower_components/hawk/lib/browser.js"></script>
+<script src="bower_components/ment.io/dist/mentio.min.js"></script>
+<script src="bower_components/angular-elastic/elastic.js"></script>
+<script src="bower_components/perfect-scrollbar/min/perfect-scrollbar.min.js"></script>
+<script src="bower_components/angular-perfect-scrollbar-4.1.1fixed/src/angular-perfect-scrollbar.js"></script>
+<script src="bower_components/cloudinary_js/js/jquery.cloudinary.js"></script>
+<script src="bower_components/cloudinary_ng/js/angular.cloudinary.js"></script>
+<script src="bower_components/jquery.sharrre.min/index.js"></script>
+<script src="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<script src="scripts/lib/introJs/intro.js"></script>
+<script src="scripts/lib/jquery/jquery.ui.widget.js"></script>
+<script src="scripts/lib/blueimp-libs/load-image.min.js"></script>
+<script src="scripts/lib/blueimp-libs/canvas-to-blob.min.js"></script>
+<script src="scripts/lib/blueimp-libs/jquery.blueimp-gallery.min.js"></script>
+<script src="scripts/lib/jquery-uploader-component/jquery.iframe-transport.js"></script>
+<script src="scripts/lib/jquery-uploader-component/jquery.fileupload.js"></script>
+<script src="scripts/lib/jquery-uploader-component/jquery.fileupload-process.js"></script>
+<script src="scripts/lib/jquery-uploader-component/jquery.fileupload-image.js"></script>
+<script src="scripts/lib/jquery-uploader-component/jquery.fileupload-audio.js"></script>
+<script src="scripts/lib/jquery-uploader-component/jquery.fileupload-video.js"></script>
+<script src="scripts/lib/jquery-uploader-component/jquery.fileupload-validate.js"></script>
+<script src="scripts/lib/jquery-uploader-component/jquery.fileupload-angular.js"></script>
+
+<!-- build:js scripts/scripts.js -->
+
+<script src="scripts/lib/angular-seo.js"></script>
+
+<script src="scripts/app.js"></script>
+<script src="scripts/routes.js"></script>
+<script src="scripts/lists/Countries.js"></script>
+<script src="scripts/lists/Featured.js"></script>
+<script src="scripts/lists/PublicPages.js"></script>
+<script src="scripts/filters/countOfTextArea.js"></script>
+<script src="scripts/filters/cut.js"></script>
+<script src="scripts/filters/encodeURIComponent.js"></script>
+<script src="scripts/filters/inSlicesOf.js"></script>
+<script src="scripts/filters/interpolate.js"></script>
+<script src="scripts/filters/reverse.js"></script>
+<script src="scripts/filters/startFrom.js"></script>
+<script src="scripts/filters/withSpaces.js"></script>
+<script src="scripts/filters/iif.js"></script>
+<script src="scripts/controllers/IdeaDetail.js"></script>
+<script src="scripts/controllers/CTABanner.js"></script>
+<script src="scripts/controllers/Deactivate.js"></script>
+<script src="scripts/controllers/FileUploadController.js"></script>
+<script src="scripts/controllers/IdeaFeed.js"></script>
+<script src="scripts/controllers/Login.js"></script>
+<script src="scripts/controllers/Signup.js"></script>
+<script src="scripts/controllers/Modals.js"></script>
+<script src="scripts/controllers/IdeaForm.js"></script>
+<script src="scripts/controllers/Navbar.js"></script>
+<script src="scripts/controllers/Public.js"></script>
+<script src="scripts/controllers/RedirectProfile.js"></script>
+<script src="scripts/controllers/Settings.js"></script>
+<script src="scripts/controllers/UserProfile.js"></script>
+<script src="scripts/controllers/UsersPage.js"></script>
+<script src="scripts/controllers/Window.js"></script>
+<script src="scripts/controllers/Home.js"></script>
+<script src="scripts/controllers/resetPassword.js"></script>
+<script src="scripts/controllers/ForgotPassword.js"></script>
+<script src="scripts/controllers/EmailConfirmation.js"></script>
+<script src="scripts/controllers/Error404.js"></script>
+<script src="scripts/services/Const.js"></script>
+<script src="scripts/services/resources.js"></script>
+<script src="scripts/services/Email.js"></script>
+<script src="scripts/services/Follow.js"></script>
+<script src="scripts/services/HandleError.js"></script>
+<script src="scripts/services/Modal.js"></script>
+<script src="scripts/services/Page.js"></script>
+<script src="scripts/services/Paginate.js"></script>
+<script src="scripts/services/UrlSanitizer.js"></script>
+<script src="scripts/services/Utility.js"></script>
+<script src="scripts/services/Validate.js"></script>
+<script src="scripts/services/user.js"></script>
+<script src="scripts/services/security.js"></script>
+<script src="scripts/services/fileTokenHeaders.js"></script>
+<script src="scripts/directives/compileTemplate.js"></script>
+<script src="scripts/directives/countryCheck.js"></script>
+<script src="scripts/directives/ngEnter.js"></script>
+<script src="scripts/directives/ngFocus.js"></script>
+<script src="scripts/directives/notify.js"></script>
+<script src="scripts/directives/uniqueUsername.js"></script>
+<!-- endbuild -->
+
+<!-- cached templates -->
+<script src="scripts/templates.js"></script>
+
+
+<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+
+</body>
+</html>
